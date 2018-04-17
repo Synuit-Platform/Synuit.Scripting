@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Types\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Synuit.Toolkit" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

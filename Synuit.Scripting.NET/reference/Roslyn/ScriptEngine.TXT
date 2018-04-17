@@ -1,0 +1,85 @@
+﻿//
+//  Synuit.Scripting - Script Engine Plugin Framework
+//  Copyright © 2012-2016 The Dude.  All Rights Reserved.
+//
+//  This work contains trade secrets and confidential material of
+//  The Dude, and its use or disclosure in whole or in part
+//  without the express written permission of The Dude is prohibited.
+//
+using Synuit.Scripting.Types;
+using Roslyn.Compilers;
+using Roslyn.Compilers.CSharp;
+using System;
+using System.IO;
+using System.Reflection;
+
+//
+namespace Synuit.Scripting.NET.Roslyn
+{
+   public class ScriptEngine : NET.ScriptEngine
+   {
+      //protected ILog _logger = LogManager.GetCurrentClassLogger();
+      //private readonly Precept.Architecture.IContainer _container = Container.Get;
+
+      public ScriptEngine() : base()
+      {
+         _references.Add(typeof(ScriptEngine).Assembly.Location);
+      }
+
+      //
+      public override IScript CompileScript(string ScriptName, string code)
+      {
+         try
+         {
+            _logger.Debug(m => m(string.Format("Compiling program {0} into: {1}", ScriptName, ScriptName + ".dll...")));
+            //
+            _logger.Debug(m => m(string.Format("Parsing source code for program {0}...", ScriptName)));
+            //
+            var tree = SyntaxTree.ParseText(code);
+            //
+            _logger.Debug(m => m(string.Format("Building metadata references for program {0}...", ScriptName)));
+            //
+            // --> build metadata references to support "using's" in code.
+            MetadataFileReference[] refs = new MetadataFileReference[_references.Count];
+            for (int i = 0; i < _references.Count; i++)
+            {
+               refs[i] = new MetadataFileReference(_references[i]);
+            }
+            _logger.Debug(m => m(string.Format("Building program {0}...", ScriptName)));
+            var compilation = Compilation.Create
+            (
+               ScriptName + ".dll",
+               options: new CompilationOptions(OutputKind.DynamicallyLinkedLibrary),
+               syntaxTrees: new[] { tree },
+               references: refs
+            );
+            //
+            Assembly compiledAssembly;
+            using (var stream = new MemoryStream())
+            {
+               EmitResult compileResult = compilation.Emit(stream);
+               compiledAssembly = Assembly.Load(stream.GetBuffer());
+            }
+            //
+            _logger.Debug(m => m(string.Format("Compile complete, adding script to cache...")));
+            //
+            IScript script = _container.Resolve<IScript>();
+            script.Name = ScriptName;
+            script.FileName = ScriptName + ".dll";
+            script.Compiled = true;
+            script.Code = code;
+            ((Script)script).Assembly = compiledAssembly;
+            //
+            this._scripts.Add(ScriptName, script);
+            //
+            _logger.Debug(m => m(string.Format("Script successfully added to script cache.")));
+            return script;
+         }
+         catch (Exception e)
+         {
+            _logger.Info(m => m(string.Format("Error compiling program {0}: {1}", ScriptName, e)));
+            throw;
+         }
+      }
+   }
+}

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Synuit.Scripting.NET.ScriptEngine">
+    <Position X="1.5" Y="10" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAQAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScriptEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Synuit.Scripting.NET.CSScript.ScriptEngine">
+    <Position X="2.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CSScript\ScriptEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Synuit.Scripting.NET.Roslyn.ScriptEngine">
+    <Position X="0.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Roslyn\ScriptEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Synuit.Scripting.AbstractScriptEngine">
+    <Position X="1.25" Y="5.25" Width="2.25" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Synuit.Scripting.Script" BaseTypeListCollapsed="true">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Synuit.Scripting.Types.IScript">
+    <Position X="6" Y="8.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Synuit.Scripting.Types.IScriptable">
+    <Position X="6" Y="10.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="Synuit.Scripting.Types.IScriptEngine">
+    <Position X="6" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Synuit.Scripting.AbstractScriptEngine">
+    <Position X="6" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABcAAIAAAAAQAAAAAAGBIAAAQAAAAAAAABAAAAAA=</HashCode>
+      <FileName>AbstractScriptEngine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Synuit.Scripting.Script">
+    <Position X="10.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAEAAAgAAQAAAAAAIAAQABCAABAAAA=</HashCode>
+      <FileName>Script.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Synuit.Scripting.Types.IScript">
+    <Position X="8.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAgAAQAAAAAAAAAAABCAABAAAA=</HashCode>
+      <FileName>Types\IScript.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Synuit.Scripting.Types.IScriptable">
+    <Position X="10.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Types\IScriptable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
