@@ -2,8 +2,8 @@
 //
 using Synuit.Scripting.NET.Roslyn;
 using Synuit.Scripting.Types;
-using Synuit.Toolkit.Platform.DI;
-using Synuit.Toolkit.Types.Platform.DI;
+using Synuit.Toolkit.Composition;
+using Synuit.Toolkit.Types.Composition;
 
 namespace Synuit.Scripting.Testing
 {

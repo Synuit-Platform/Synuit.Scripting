@@ -1,12 +1,25 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseUrl>https://github.com/Synuit/Synuit.Scripting/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Synuit/Synuit.Scripting</PackageProjectUrl>
+    <RepositoryType>C#</RepositoryType>
+    <RepositoryUrl>https://github.com/Synuit/Synuit.Scripting</RepositoryUrl>
+    <Copyright>Copyright © 2018 Synuit Software</Copyright>
+    <Authors>Tyson A. Corvin</Authors>
+    <Product>Synuit.Scripting</Product>
+    <Company>Synuit Software</Company>
+    <PackageIconUrl>http://www.javelinmediagroup.com/wp-content/uploads/2018/04/synuit.scripting.png</PackageIconUrl>
+    <Version>1.0.2</Version>
+    <PackageReleaseNotes>v1.0.2 Modified to target .NET Standard 2.0 to enhance cross-platform capability</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="2.7.0" />
-    <PackageReference Include="Synuit.Toolkit" Version="1.0.0" />
+    <PackageReference Include="Synuit.Toolkit" Version="1.0.6" />
   </ItemGroup>
 
   <ItemGroup>

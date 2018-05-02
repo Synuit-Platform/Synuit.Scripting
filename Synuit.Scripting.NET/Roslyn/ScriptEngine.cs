@@ -9,10 +9,8 @@
 using System;
 using System.IO;
 using System.Reflection;
-using System.Runtime.Loader;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.Emit;
 //
 using Synuit.Scripting.Types;
 //

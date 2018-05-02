@@ -8,9 +8,9 @@
 //
 using System.Collections.Generic;
 //
-using Synuit.Toolkit.Types.Platform.DI;
 using Synuit.Scripting.Types;
 using System.Reflection;
+using Synuit.Toolkit.Types.Composition;
 //
 namespace Synuit.Scripting
 {

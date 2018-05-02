@@ -7,9 +7,8 @@
 //  without the express written permission of Synuit is prohibited.
 //
 using System.Collections.Generic;
+using Synuit.Toolkit.Types.Composition;
 //
-using Synuit.Toolkit.Types.Platform.DI;
-
 namespace Synuit.Scripting.Types
 {
    public interface IScriptEngine
