@@ -30,6 +30,23 @@ namespace Synuit.Scripting.Testing
 
          return RegisterHostTestPassed;
       }
+      [Fact]
+      public bool CompileBadCode()
+      {
+         RegisterHostTestPassed = false;
+         IScriptEngine se = Container.Get.Resolve<IScriptEngine>();
+         se.SetContainer(Container.Get);
+
+         se.RegisterObject<RoslynTestFixture>(this);
+
+         se.AddReference(typeof(RoslynTestFixture).Assembly.Location);
+         se.AddReference(typeof(IScriptable).Assembly.Location);
+
+         IScript script = se.CompileScript("MyProcess", bad_code);
+         return script.HasErrors;
+
+      }
+
 
       [Fact]
       public bool ExecuteScriptTest()
@@ -62,6 +79,29 @@ public class Process
    {
       _host = host;
       _host.RegisterHostTestPassed = true;
+   }
+   public void Execute()
+   {
+      _host.ExecuteTestPassed = true;
+   }
+}
+";
+
+
+
+      private const string bad_code =
+@"
+using System;
+using System.Collections.Generic;
+using Synuit.Scripting.Testing;
+
+public class Process
+{
+   RoslynTestFixture _host;
+   public Process( RoslynTestFixture host ):base()
+   {
+      _host = host;
+      _host.RegisterHostTestPasse = true;
    }
    public void Execute()
    {

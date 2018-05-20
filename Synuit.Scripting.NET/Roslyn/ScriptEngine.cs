@@ -67,6 +67,10 @@ namespace Synuit.Scripting.NET.Roslyn
             //////   EmitResult compileResult = compilation.Emit(stream);
             //////   compiledAssembly = Assembly.Load(stream.GetBuffer());
             //////}
+            IScript script = _container.Resolve<IScript>();
+            script.Name = ScriptName;
+            script.FileName = ScriptName + ".dll";
+            script.Code = code;
 
             using (var dllStream = new MemoryStream())
             using (var pdbStream = new MemoryStream())
@@ -77,12 +81,16 @@ namespace Synuit.Scripting.NET.Roslyn
 
                if (!emitResult.Success)
                {
+                  script.Compiled = false;
+                  script.HasErrors = true;
+              
                   foreach (var diagnostic in emitResult.Diagnostics)
                   {
                      var debug = diagnostic.ToString();
+                     script.Diagnostics.Add(debug);
                      Console.WriteLine(debug);
                   }
-                  return null;
+                  return script;
                }
                //
                compiledAssembly = Assembly.Load(dllStream.GetBuffer());
@@ -93,11 +101,10 @@ namespace Synuit.Scripting.NET.Roslyn
                //
                //$!!$_logger.Debug(m => m(string.Format("Compile complete, adding script to cache...")));
                //
-               IScript script = _container.Resolve<IScript>();
-               script.Name = ScriptName;
-               script.FileName = ScriptName + ".dll";
+           
+        
                script.Compiled = true;
-               script.Code = code;
+               
                ((Script)script).Assembly = compiledAssembly;
                //
                this._scripts.Add(ScriptName, script);

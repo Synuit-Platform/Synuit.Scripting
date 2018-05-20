@@ -6,6 +6,8 @@
 //  Synuit, and its use or disclosure in whole or in part
 //  without the express written permission of Synuit is prohibited.
 //
+using System.Collections.Generic;
+
 namespace Synuit.Scripting.Types
 {
    public interface IScript
@@ -33,6 +35,9 @@ namespace Synuit.Scripting.Types
       string Template { get; set; }
 
       IScriptParts ScriptParts { get; set; }
+
+      bool HasErrors { get; set; }
+      IList<string> Diagnostics { get; set; }
 
    }
 }

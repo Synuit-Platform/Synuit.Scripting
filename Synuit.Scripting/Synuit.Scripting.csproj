@@ -11,9 +11,9 @@
     <RepositoryUrl>https://github.com/Synuit/Synuit.Scripting</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/Synuit/Synuit.Scripting/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>http://www.javelinmediagroup.com/wp-content/uploads/2018/04/synuit.scripting.png</PackageIconUrl>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <RepositoryType>C#</RepositoryType>
-    <PackageReleaseNotes>v1.0.2 Modified to target .NET Standard 2.0 to enhance cross-platform capability</PackageReleaseNotes>
+    <PackageReleaseNotes>v1.0.3 - added error diagnostics tooling to script interfaces/objects</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

@@ -8,6 +8,7 @@
 //
 using Synuit.Scripting.Types;
 using System;
+using System.Collections.Generic;
 
 //
 namespace Synuit.Scripting
@@ -36,6 +37,8 @@ namespace Synuit.Scripting
       public object Instance { get; set; }
       public string Template { get; set; } = "";
       public IScriptParts ScriptParts { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+      public bool HasErrors { get; set; } = false;
+      public IList<string> Diagnostics { get; set; } = new List<string>();
 
       //
       public override string ToString()

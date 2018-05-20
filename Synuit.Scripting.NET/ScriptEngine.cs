@@ -6,11 +6,9 @@
 //  Synuit, and its use or disclosure in whole or in part
 //  without the express written permission of Synuit is prohibited.
 //
-//$!!$using Common.Logging;
 using Synuit.Scripting.Types;
 using System;
 using System.Reflection;
-
 //
 namespace Synuit.Scripting.NET
 {
