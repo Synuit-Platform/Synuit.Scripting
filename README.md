@@ -6,4 +6,5 @@ This framework is for developers looking to embed a script engine in their core 
 
 Objectives:
 - Provide a framework for making applications, services and/or processes "scriptable"
-- Provide an extensibility model for developing new script engine plugins using existing scripting technologies
+- Provide an extensibility model for developing new script engine plugins leveraging existing scripting technologies (i.e. C#, Lua, Python, R)
+- Simplify plugin creation by providing a common pattern and associated primatives/types.
