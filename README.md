@@ -1,5 +1,5 @@
 # Synuit.Scripting
-Script Engine Plugin Framework for .NET
+![alt text](http://www.javelinmediagroup.com/wp-content/uploads/2018/04/synuit.scripting.png "Synuit.Scripting") Script Engine Plugin Framework for .NET
 
 This framework is for developers looking to embed a script engine in their core product.
 
