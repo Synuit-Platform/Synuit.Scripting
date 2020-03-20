@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RCore.NET" Version="1.71.0-alpha02" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Synuit.Scripting\Synuit.Scripting.csproj" />
+  </ItemGroup>
+
+</Project>

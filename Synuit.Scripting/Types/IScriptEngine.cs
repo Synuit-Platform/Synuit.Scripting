@@ -20,6 +20,8 @@ namespace Synuit.Scripting.Types
       //
       void RegisterObject<THostObject>(THostObject hostObject) where THostObject : class;
       //
+      object Execute(string code);
+      T Execute<T>(string code);
       void Execute(IScript script, object[] args = null);
       //
       void Execute(string name, string code = "", string className = "", string methodName = "", bool forceRecompile = false, bool forceNewInstance = false);

@@ -84,5 +84,8 @@ namespace Synuit.Scripting
       //
       public abstract T CreateInstance<T>(string filename, string className, object[] args = null);
 
+      public abstract object Execute(string code);
+
+      public abstract T Execute<T>(string code);
    }
 }

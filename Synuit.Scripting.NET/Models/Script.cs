@@ -9,9 +9,9 @@
 using System.Reflection;
 
 //
-namespace Synuit.Scripting.NET
+namespace Synuit.Scripting.NET.Models
 {
-   public class Script : Scripting.Script
+   public class Script : Scripting.Models.Script
    {
       public Assembly Assembly { get; set; } = null;
    }

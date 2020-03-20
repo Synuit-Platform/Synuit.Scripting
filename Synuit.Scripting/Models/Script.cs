@@ -11,7 +11,7 @@ using System;
 using System.Collections.Generic;
 
 //
-namespace Synuit.Scripting
+namespace Synuit.Scripting.Models
 {
    [Serializable]
    public class Script : IScript
